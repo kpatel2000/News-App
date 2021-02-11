@@ -15,10 +15,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), NewsItemClicked {
 
     private lateinit var mAdapter: NewsListAdapter
-    var url:String = "https://newsapi.org/v2/top-headlines?country=in&apiKey=a5c1e7db06554f67b80b3a4f3497a793"
+
+    var url:String = "https://newsapi.org/v2/top-headlines?country=in&apiKey=${BuildConfig.ApiKey}"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        supportActionBar?.hide();
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         fetchData()
@@ -80,43 +83,43 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
         return when (item.itemId) {
             R.id.business -> {
                 titletv.text = "Business"
-                url = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=a5c1e7db06554f67b80b3a4f3497a793"
+                url = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${BuildConfig.ApiKey}"
                 fetchData()
                 true
             }
             R.id.entertainment -> {
                 titletv.text = "Entertainment"
-                url = "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=a5c1e7db06554f67b80b3a4f3497a793"
+                url = "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=${BuildConfig.ApiKey}"
                 fetchData()
                 true
             }
             R.id.general -> {
                 titletv.text = "General"
-                url = "https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=a5c1e7db06554f67b80b3a4f3497a793"
+                url = "https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=${BuildConfig.ApiKey}"
                 fetchData()
                 true
             }
             R.id.health -> {
                 titletv.text = "Health"
-                url = "https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=a5c1e7db06554f67b80b3a4f3497a793"
+                url = "https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=${BuildConfig.ApiKey}"
                 fetchData()
                 true
             }
             R.id.science -> {
                 titletv.text = "Science"
-                url = "https://newsapi.org/v2/top-headlines?country=in&category=science&apiKey=a5c1e7db06554f67b80b3a4f3497a793"
+                url = "https://newsapi.org/v2/top-headlines?country=in&category=science&apiKey=${BuildConfig.ApiKey}"
                 fetchData()
                 true
             }
             R.id.sports -> {
                 titletv.text = "Sports"
-                url = "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=a5c1e7db06554f67b80b3a4f3497a793"
+                url = "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=${BuildConfig.ApiKey}"
                 fetchData()
                 true
             }
             R.id.technology -> {
                 titletv.text = "Technology"
-                url = "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=a5c1e7db06554f67b80b3a4f3497a793"
+                url = "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=${BuildConfig.ApiKey}"
                 fetchData()
                 true
             }
